@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend:8
+  name: frontend:9
   namespace: three-tier
   labels:
-    role: frontend:8
+    role: frontend:9
     env: demo
 spec: 
   replicas: 1
@@ -15,17 +15,17 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels: 
-      role: frontend:8
+      role: frontend:9
   template:
     metadata:
       labels:
-        role: frontend:8
+        role: frontend:9
     spec: 
       imagePullSecrets:
       - name: ecr-registry-secret
       containers:
-      - name: frontend:8
-        image: 381492214061.dkr.ecr.us-east-1.amazonaws.com/frontend:8latest
+      - name: frontend:9
+        image: 381492214061.dkr.ecr.us-east-1.amazonaws.com/frontend:9
         imagePullPolicy: Always
         env:
           - name: REACT_APP_BACKEND_URL
