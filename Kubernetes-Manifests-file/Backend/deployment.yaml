@@ -21,8 +21,8 @@ spec:
       labels:
         role: api
     spec:
-      imagePullSecrets:
-      - name: ecr-registry-secret
+     # imagePullSecrets:
+    #  - name: ecr-registry-secret
       containers:
       - name: api
         image: public.ecr.aws/m3y4k5f3/backend:15
